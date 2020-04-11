@@ -7,7 +7,8 @@ from pyspark.sql import Row
 from pyspark.sql.types import *
 
 
-DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+# Get the path of parent directory i.e. LearnSpark
+DIR_PATH = os.path.dirname(os.getcwd())
 
 
 def basic_df_example(spark):
