@@ -86,9 +86,9 @@ def programmatic_schema_example(spark):
     people = parts.map(lambda p: (p[0], p[1].strip()))
 
     # The schema is encoded in a string.
-    schemaString = "name age"
+    schema_string = "name age"
 
-    fields = [StructField(field_name, StringType(), True) for field_name in schemaString.split()]
+    fields = [StructField(field_name, StringType(), True) for field_name in schema_string.split()]
     schema = StructType(fields)
 
     # Apply the schema to the RDD.
