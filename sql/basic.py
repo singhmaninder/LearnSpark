@@ -35,8 +35,8 @@ def basic_df_example(spark):
     # Register the DataFrame as a SQL temporary view
     df.createOrReplaceTempView("people")
 
-    sqlDF = spark.sql("SELECT * FROM people")
-    sqlDF.show()
+    sql_df = spark.sql("SELECT * FROM people")
+    sql_df.show()
 
     # Register the DataFrame as a global temporary view
     df.createGlobalTempView("people")
@@ -67,8 +67,8 @@ def schema_inference_example(spark):
 
     # The results of SQL queries are Dataframe objects.
     # rdd returns the content as an :class:`pyspark.RDD` of :class:`Row`.
-    teenNames = teenagers.rdd.map(lambda p: "Name: " + p.name).collect()
-    for name in teenNames:
+    teen_names = teenagers.rdd.map(lambda p: "Name: " + p.name).collect()
+    for name in teen_names:
         print(name)
     # Name: Justin
     # $example off:schema_inferring$
